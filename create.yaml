@@ -1,4 +1,4 @@
 - name: Create resource group
   azure_rm_resourcegroup:
-    name: ansiblerg1
-    location: centralindia
+    name: testrg1
+    location: centrlindia
