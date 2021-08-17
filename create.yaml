@@ -1,8 +1,8 @@
 - hosts: azure
-name: Create a resource group
-azure_rm_resourcegroup:
-    name: myResourceGroup
-    location: centralindia
-    tags:
-        testing: testing
-        delete: never
+  connection: local
+  tasks:
+    - name: Create a resource group
+      azure_rm_resourcegroup:
+      name: myResourceGroup
+      location: centralindia
+      
