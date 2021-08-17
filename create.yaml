@@ -1,8 +1,11 @@
-- hosts: azure
+- hosts: localhost
   connection: local
   tasks:
-    - name: Create a resource group
+    - name: Create resource group
       azure_rm_resourcegroup:
-      name: myResourceGroup
-      location: centralindia
+        name: rg-cs-ansible
+        location: eastus
+      register: rg
+    - debug:
+        var: rg
       
