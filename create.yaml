@@ -1,3 +1,4 @@
+hosts: localhost
 - name: Create a resource group
 azure_rm_resourcegroup:
     name: myResourceGroup
