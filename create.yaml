@@ -1,5 +1,4 @@
 - name: Create a resource group
-hosts: all
 azure_rm_resourcegroup:
     name: myResourceGroup
     location: centralindia
