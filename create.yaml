@@ -1,5 +1,7 @@
-- name: Check connectivity to remote servers
-  hosts: all #servergroup01
-  tasks:
-    - name: ping
-      ping:
+- name: Create a resource group
+  azure_rm_resourcegroup:
+    name: myResourceGroup
+    location: westus
+    tags:
+        testing: testing
+        delete: never
