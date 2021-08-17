@@ -1,4 +1,5 @@
-- name: Create resource group
-  azure_rm_resourcegroup:
-    name: testrg1
-    location: centrlindia
+- name: Check connectivity to remote servers
+  hosts: all #servergroup01
+  tasks:
+    - name: ping
+      ping:
