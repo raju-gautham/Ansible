@@ -1,6 +1,6 @@
 - name: Create a resource group
-hosts: all #servergroup01
-  azure_rm_resourcegroup:
+hosts: all
+azure_rm_resourcegroup:
     name: myResourceGroup
     location: centralindia
     tags:
