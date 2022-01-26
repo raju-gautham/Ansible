@@ -1,0 +1,39 @@
+http://vcloud-lab.com/entries/devops/install-ansible-awx-tower-on-ubuntu-linux
+
+sudo su
+sudo apt update && sudo apt -y upgrade
+sudo reboot
+
+sudo apt install python-setuptools -y
+sudo apt install python3-pip -y
+sudo pip3 install ansible
+ansible localhost -m ping
+
+sudo pip3 install docker-compose
+sudo apt install docker docker.io -y
+docker-compose version
+docker version
+sudo usermod -aG docker $USER
+
+sudo apt install git unzip pwgen -y
+
+wget https://github.com/ansible/awx/archive/17.1.0.zip
+unzip 17.1.0.zip
+ cd awx-17.1.0/installer
+
+ pwgen -N 1 -s 30
+
+ vi inventory
+
+//admin_user=admin
+//admin_password=<Strong-Admin-password>
+//secret_key=XpdGUviUD8xZdb1LSOyM7pomTb80Lu
+
+cat inventory | grep -v '^#' | sed '/^\s*#/d;/^\s*$/d'
+
+sudo su
+ansible-playbook -i inventory install.yml
+docker ps
+
+-- grant access to port 80
+http://<Public_id>/#/login
